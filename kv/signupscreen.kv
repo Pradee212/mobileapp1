@@ -103,6 +103,8 @@
         on_release:
             app.my_firebase.sign_up(signup_username.text , signup_email.text , signup_password.text)
 
+        on_release:
+            app.change_screen("login_screen")
 
     MDLabel:
         text: "Already have an account?"

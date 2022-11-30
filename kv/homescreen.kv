@@ -1,8 +1,140 @@
-#: import utils kivy.utils
-
+#:import utils kivy.utils
 <HomeScreen>:
-    MDFloatLayout:
-        md_bg_color: 1, 1, 1, 1
-        Image:
-            source: r"C:\\Users\\gtm24_y457pwa\\PycharmProjects\\mobileapp\\asseets//logo.png"
-            pos_hint: {"center_x": .50, "center_y": .65}
+    BoxLayout:
+        orientation:'vertical'
+        MDTopAppBar:
+            title: "Eventerly!"
+            MDIconButton:
+                icon: "account-outline"
+                pos_hint: {"center_y": .95}
+                user_font_size: "30sp"
+                theme_text_color: "Custom"
+                text_color: rgba(26, 24, 58, 255)
+                on_release:
+                    app.change_screen("first_screen")
+        left
+        MDBottomNavigation:
+            panel_color: "#98ccff"
+            selected_color_background: "lightblue"
+            text_color_active: "#ffbf00"
+
+            MDBottomNavigationItem:
+                name: 'screen 1'
+                text: 'Feed'
+                icon: 'newspaper-variant-multiple-outline'
+                #badge_icon: "numeric-10"
+
+                ScrollView:
+                    size: self.size
+                    GridLayout:
+                        size_hint_y: None
+                        height: self.minimum_height
+                        width: self.minimum_width
+                        cols: 1
+                        spacing: '20dp'
+                        padding: '20dp'
+                        MDCard:
+                            orientation:'vertical'
+                            padding: '8dp'
+                            size_hint: 1, None
+                            height: '120dp'
+                            elevation: 5
+                            border_radius: 20
+                            radius: [15]
+                        MDCard:
+                            orientation:'vertical'
+                            padding: '8dp'
+                            size_hint: 1, None
+                            height: '120dp'
+                            elevation: 5
+                            border_radius: 20
+                            radius: [15]
+                        MDCard:
+                            orientation:'vertical'
+                            padding: '8dp'
+                            size_hint: 1, None
+                            height: '120dp'
+                            elevation: 5
+                            border_radius: 20
+                            radius: [15]
+                        MDCard:
+                            orientation:'vertical'
+                            padding: '8dp'
+                            size_hint: 1, None
+                            height: '120dp'
+                            elevation: 5
+                            border_radius: 20
+                            radius: [15]
+                        MDCard:
+                            orientation:'vertical'
+                            padding: '8dp'
+                            size_hint: 1, None
+                            height: '120dp'
+                            elevation: 5
+                            border_radius: 20
+                            radius: [15]
+            MDBottomNavigationItem:
+                name: 'screen 2'
+                text: 'Events'
+                icon: 'calendar-month-outline'
+                #badge_icon: "numeric-5"
+
+                MDLabel:
+                    text: "Plan Your Event"
+                    halign: 'center'
+                    pos_hint: {'center_x': 0.5, 'center_y': 0.95}
+                    font_size: '30dp'
+
+                MDTextField:
+                    id: event
+                    hint_text: "Type of Event"
+                    pos_hint: {'center_x': 0.44, 'center_y': 0.83}
+                    size_hint_x: None
+                    width: 200
+
+                MDTextField:
+                    id: location
+                    hint_text: "Location"
+                    pos_hint: { 'center_x': 0.44, 'center_y': 0.7}
+                    size_hint_x: None
+                    width: 200
+                MDFloatLayout:
+                    MDRaisedButton:
+                        text:"Open Calender"
+                        pos_hint: {'center_x': 0.5, 'center_y': 0.55}
+                        on_release: app.show_date_picker()
+
+                    MDLabel:
+                        id: date_label
+                        text: "Date:"
+                        pos_hint: {'center_x': 0.3, 'center_y': 0.55}
+                        size_hint_x: None
+
+                    MDRaisedButton:
+                        text: "Open Clock"
+                        pos_hint: {'center_x': 0.5, 'center_y': 0.4}
+                        on_release: app.show_time_picker()
+
+                    MDLabel:
+                        id: time_label
+                        text: "Time:"
+                        pos_hint: {'center_x': 0.3, 'center_y': 0.4}
+                        size_hint_x: None
+
+                MDRaisedButton:
+                    text: "Create Event"
+                    pos_hint: {'center_x': 0.5, 'center_y': 0.2}
+
+
+            MDBottomNavigationItem:
+                name: 'screen 3'
+                text: 'Messages'
+                icon: 'cellphone-message'
+
+
+
+
+            MDBottomNavigationItem:
+                name: 'screen 4'
+                text: 'Settings'
+                icon: 'cog-outline'

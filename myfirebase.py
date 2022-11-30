@@ -4,18 +4,19 @@ import json
 from kivymd.app import MDApp
 
 config = {
-    "apiKey": "AIzaSyDdeGrr84z-zwCFR23HXVAjpd322v1HIsY",
-    "authDomain": "eventerly-84a0a.firebaseapp.com",
-    "databaseURL": "https://eventerly-84a0a-default-rtdb.firebaseio.com",
-    "projectId": "eventerly-84a0a",
-    "storageBucket": "eventerly-84a0a.appspot.com",
-    "messagingSenderId": "374097608414",
-    "appId": "1:374097608414:web:976283df3546ae6b778c4f",
-    "measurementId": "G-8G09328VJY"
+    "apiKey": "AIzaSyDSIHJVtxsqyjCdDztX7CNa-_JYXioUAIc",
+    "authDomain": "fir-databse-a1d47.firebaseapp.com",
+    "databaseURL": "https://fir-databse-a1d47-default-rtdb.firebaseio.com",
+    "projectId": "fir-databse-a1d47",
+    "storageBucket": "fir-databse-a1d47.appspot.com",
+    "messagingSenderId": "121947075225",
+    "appId": "1:121947075225:web:118e5c242dff926f27fe08",
+    "measurementId": "G-XM6VLEW2P3"
 }
 
 firebase_auth = pyrebase.initialize_app(config)
-firebase_data = firebase.FirebaseApplication("https://eventerly-84a0a-default-rtdb.firebaseio.com/" , None)
+
+firebase_data = firebase.FirebaseApplication("https://fir-databse-a1d47-default-rtdb.firebaseio.com/" , None)
 
 class MyFirebase() :
     def sign_up(self , username , email , password):
@@ -34,6 +35,7 @@ class MyFirebase() :
             user_signup = signup_auth.create_user_with_email_and_password(email, password)
             print("SignUp Successfully")
             MDApp.get_running_app().root.ids["signup_screen"].ids["signup_screen"].text = "[b][color=#FF0000]Signup Succesfully.[/color][/b]"
+
         except:
             MDApp.get_running_app().root.ids["signup_screen"].ids["signup_screen"].text = "[b][color=#0000FF]Please enter correct details.[/color][/b]"
 

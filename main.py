@@ -1,8 +1,11 @@
+from kivy.properties import ObjectProperty
 from kivymd.app import MDApp
 from kivy.lang import Builder
 from kivy.uix.screenmanager import Screen
 from kivy.uix.button import ButtonBehavior
 from kivy.uix.label import Label
+from kivymd.uix.pickers import MDDatePicker, MDTimePicker
+
 from myfirebase import MyFirebase
 from kivy.core.window import Window
 
@@ -11,6 +14,8 @@ class HomeScreen(Screen) :
 class FirstScreen(Screen) :
     pass
 class SettingsScreen(Screen) :
+    pass
+class EventScreen(Screen) :
     pass
 
 class LoginScreen(Screen) :
@@ -29,6 +34,9 @@ Window.size = (320, 600)
 
 
 class Eventerly(MDApp) :
+
+
+
     def build(self):
         self.my_firebase = MyFirebase()
         files = Builder.load_file("main.kv")
@@ -40,4 +48,30 @@ class Eventerly(MDApp) :
         screen_manager.current = filename
         pass
 
-Eventerly().run()
+
+    def on_save(self, instance, value, date_range):
+        self.root.ids.date_label.text = str(value)
+
+    def on_cancel(self, instance, value):
+        self.root.ids.date_label.text = "You clicked cancel!"
+
+    def show_date_picker(self):
+        date_dialog = MDDatePicker()
+        date_dialog.bind(on_save=self.on_save, on_cancel=self.on_cancel)
+        date_dialog.open()
+
+    def get_time(self, instance, time):
+        self.root.ids.time_label.text = str(time)
+
+    def on_cancel(self, instance, time):
+        self.root.ids.time_label.text = "You clicked cancel!"
+
+    def show_time_picker(self):
+        time_dialog = MDTimePicker()
+        time_dialog.bind(on_cancel=self.on_cancel, time=self.get_time)
+        time_dialog.open()
+
+
+
+if __name__ == "__main__":
+    Eventerly().run()
