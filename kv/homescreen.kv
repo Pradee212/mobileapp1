@@ -15,6 +15,7 @@
             text_color_active: "#ffbf00"
 
             MDBottomNavigationItem:
+                id: feed
                 name: 'screen 1'
                 text: 'Feed'
                 icon: 'newspaper-variant-multiple-outline'
@@ -101,26 +102,33 @@
                         on_release: app.show_date_picker()
 
                     MDLabel:
-                        id: date_label
                         text: "Date:"
                         pos_hint: {'center_x': 0.3, 'center_y': 0.55}
+                        size_hint_x: None
+                    MDLabel:
+                        id: date_label
+                        pos_hint: {'center_x': 0.5, 'center_y': 0.46}
                         size_hint_x: None
 
                     MDRaisedButton:
                         text: "Open Clock"
-                        pos_hint: {'center_x': 0.5, 'center_y': 0.4}
+                        pos_hint: {'center_x': 0.5, 'center_y': 0.36}
                         on_release: app.show_time_picker()
 
                     MDLabel:
-                        id: time_label
                         text: "Time:"
-                        pos_hint: {'center_x': 0.3, 'center_y': 0.4}
+                        pos_hint: {'center_x': 0.3, 'center_y': 0.36}
+                        size_hint_x: None
+                    MDLabel:
+                        id: time_label
+                        pos_hint: {'center_x': 0.55, 'center_y': 0.26}
                         size_hint_x: None
 
                 MDRaisedButton:
                     text: "Create Event"
-                    pos_hint: {'center_x': 0.5, 'center_y': 0.2}
-
+                    pos_hint: {'center_x': 0.5, 'center_y': 0.15}
+                    on_release:
+                        app.root.ids["home_screen"].ids["feed"]
 
             MDBottomNavigationItem:
                 name: 'screen 3'
