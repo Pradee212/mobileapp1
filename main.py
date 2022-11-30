@@ -48,6 +48,7 @@ class Eventerly(MDApp) :
         screen_manager.current = filename
         pass
 
+
     def get_date(self, instance, value, date_range):
         self.root.ids["home_screen"].ids["date_label"].text = str(value)
 

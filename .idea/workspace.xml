@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="194dd704-b05e-49a8-8dde-a7e693c68092" name="Changes" comment="updated seeting">
+    <list default="true" id="194dd704-b05e-49a8-8dde-a7e693c68092" name="Changes" comment="updated event">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kv/homescreen.kv" beforeDir="false" afterPath="$PROJECT_DIR$/kv/homescreen.kv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
@@ -95,7 +95,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669790871972</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="updated event">
+      <created>1669794760705</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1669794760705</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -112,6 +119,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="updated" />
     <MESSAGE value="updated seeting" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated seeting" />
+    <MESSAGE value="updated event" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated event" />
   </component>
 </project>

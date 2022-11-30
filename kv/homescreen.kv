@@ -31,13 +31,18 @@
                         spacing: '20dp'
                         padding: '20dp'
                         MDCard:
+                            id: block1
                             orientation:'vertical'
                             padding: '8dp'
                             size_hint: 1, None
-                            height: '120dp'
+                            height: '220dp'
                             elevation: 5
                             border_radius: 20
                             radius: [15]
+                            TextInput:
+                                id: past_event
+                                hint_text: "There was a music event on Nov 21st at Sam Houston Parkaway"
+                                font_size: "24sp"
                         MDCard:
                             orientation:'vertical'
                             padding: '8dp'
@@ -116,6 +121,7 @@
                         on_release: app.show_time_picker()
 
                     MDLabel:
+
                         text: "Time:"
                         pos_hint: {'center_x': 0.3, 'center_y': 0.36}
                         size_hint_x: None
@@ -127,8 +133,7 @@
                 MDRaisedButton:
                     text: "Create Event"
                     pos_hint: {'center_x': 0.5, 'center_y': 0.15}
-                    on_release:
-                        app.root.ids["home_screen"].ids["feed"]
+
 
             MDBottomNavigationItem:
                 name: 'screen 3'
