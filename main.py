@@ -50,10 +50,10 @@ class Eventerly(MDApp) :
 
 
     def on_save(self, instance, value, date_range):
-        self.root.ids.date_label.text = str(value)
+        self.root.ids["home_screen"].ids["date_label"].text = str(value)
 
     def on_cancel(self, instance, value):
-        self.root.ids.date_label.text = "You clicked cancel!"
+        self.root.ids["home_screen"].ids["date_label"].text = "You clicked cancel!"
 
     def show_date_picker(self):
         date_dialog = MDDatePicker()
@@ -61,10 +61,10 @@ class Eventerly(MDApp) :
         date_dialog.open()
 
     def get_time(self, instance, time):
-        self.root.ids.time_label.text = str(time)
+        self.root.ids["home_screen"].ids["time_label"] = str(time)
 
     def on_cancel(self, instance, time):
-        self.root.ids.time_label.text = "You clicked cancel!"
+        self.root.ids["home_screen"].ids["time_label"] = "You clicked cancel!"
 
     def show_time_picker(self):
         time_dialog = MDTimePicker()

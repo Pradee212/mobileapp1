@@ -4,15 +4,11 @@
         orientation:'vertical'
         MDTopAppBar:
             title: "Eventerly!"
-            MDIconButton:
-                icon: "account-outline"
-                pos_hint: {"center_y": .95}
-                user_font_size: "30sp"
-                theme_text_color: "Custom"
-                text_color: rgba(26, 24, 58, 255)
-                on_release:
-                    app.change_screen("first_screen")
-        left
+            md_bg_color: "#98ccff"
+            left_action_items: [["account-outline", "To Profile"]]
+            right_action_items:[["help", "Help"]]
+
+
         MDBottomNavigation:
             panel_color: "#98ccff"
             selected_color_background: "lightblue"
@@ -131,10 +127,49 @@
                 text: 'Messages'
                 icon: 'cellphone-message'
 
-
-
-
             MDBottomNavigationItem:
                 name: 'screen 4'
                 text: 'Settings'
                 icon: 'cog-outline'
+                Button:
+                    text: "Logout"
+                    size_hint: .5, .065
+                    font_size: "25sp"
+                    pos_hint: {"center_x": .46, "center_y": .26}
+                    background_color: 0, 0, 0, 0
+                    canvas.before:
+                        Color:
+                            rgb: rgba(0, 146, 254, 0.8)
+                        RoundedRectangle:
+                            size: self.size
+                            pos: self.pos
+                            radius:[5]
+                    on_release:
+                        app.change_screen("first_screen")
+
+                Button:
+                    text: "Privacy Policy"
+                    size_hint: .77, .065
+                    font_size: "25sp"
+                    pos_hint: {"center_x": .4, "center_y": .8}
+                    background_color: 0, 0, 0, 0
+                    canvas.before:
+                        Color:
+                            rgb: rgba(0, 146, 254, 0.9)
+                        RoundedRectangle:
+                            size: self.size
+                            pos: self.pos
+                            radius:[5]
+                Button:
+                    text: "Terms and Conditions"
+                    size_hint: .77, .065
+                    font_size: "25sp"
+                    pos_hint: {"center_x": .4, "center_y": .65}
+                    background_color: 0, 0, 0, 0
+                    canvas.before:
+                        Color:
+                            rgb: rgba(0, 146, 254, 0.8)
+                        RoundedRectangle:
+                            size: self.size
+                            pos: self.pos
+                            radius:[5]
