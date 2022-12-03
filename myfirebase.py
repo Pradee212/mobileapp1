@@ -1,3 +1,4 @@
+
 import pyrebase
 from firebase import firebase
 import json
@@ -17,6 +18,7 @@ config = {
 firebase_auth = pyrebase.initialize_app(config)
 
 firebase_data = firebase.FirebaseApplication("https://fir-databse-a1d47-default-rtdb.firebaseio.com/" , None)
+
 
 class MyFirebase() :
     def sign_up(self , username , email , password):
